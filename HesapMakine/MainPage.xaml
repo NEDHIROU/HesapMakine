@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HesapMakine.MainPage">
+    <VerticalStackLayout Padding="30" Spacing="10">
+
+        <!-- Display for calculator results -->
+        <Label x:Name="ResultLabel"
+               Text="0"
+               FontSize="40"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="End"
+               VerticalOptions="Center"
+               BackgroundColor="white"
+               Padding="20"/>
+
+        <!-- Buttons Layout -->
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+              ColumnDefinitions="*,*,*,*">
+
+            <!-- Row 1 (C, /, *, ←) -->
+            <Button Text="C" Grid.Row="0" Grid.Column="0" Clicked="Clear_Clicked"/>
+            <Button Text="/" Grid.Row="0" Grid.Column="1" Clicked="Operator_Clicked"/>
+            <Button Text="*" Grid.Row="0" Grid.Column="2" Clicked="Operator_Clicked"/>
+            <Button Text="←" Grid.Row="0" Grid.Column="3" Clicked="Backspace_Clicked"/>
+
+            <!-- Row 2 (7, 8, 9, -) -->
+            <Button Text="7" Grid.Row="1" Grid.Column="0" Clicked="Number_Clicked"/>
+            <Button Text="8" Grid.Row="1" Grid.Column="1" Clicked="Number_Clicked"/>
+            <Button Text="9" Grid.Row="1" Grid.Column="2" Clicked="Number_Clicked"/>
+            <Button Text="-" Grid.Row="1" Grid.Column="3" Clicked="Operator_Clicked"/>
+
+            <!-- Row 3 (4, 5, 6, +) -->
+            <Button Text="4" Grid.Row="2" Grid.Column="0" Clicked="Number_Clicked"/>
+            <Button Text="5" Grid.Row="2" Grid.Column="1" Clicked="Number_Clicked"/>
+            <Button Text="6" Grid.Row="2" Grid.Column="2" Clicked="Number_Clicked"/>
+            <Button Text="+" Grid.Row="2" Grid.Column="3" Clicked="Operator_Clicked"/>
+
+            <!-- Row 4 (1, 2, 3, =) -->
+            <Button Text="1" Grid.Row="3" Grid.Column="0" Clicked="Number_Clicked"/>
+            <Button Text="2" Grid.Row="3" Grid.Column="1" Clicked="Number_Clicked"/>
+            <Button Text="3" Grid.Row="3" Grid.Column="2" Clicked="Number_Clicked"/>
+            <Button Text="=" Grid.Row="3" Grid.Column="3" Clicked="Equal_Clicked"/>
+
+            <!-- Row 5 (0, ., %) -->
+            <Button Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Clicked="Number_Clicked"/>
+            <Button Text="." Grid.Row="4" Grid.Column="2" Clicked="Decimal_Clicked"/>
+            <Button Text="%" Grid.Row="4" Grid.Column="3" Clicked="Operator_Clicked"/>
+
+            <!-- Row 6 (sin, cos, tan, ln) -->
+            <Button Text="sin" Grid.Row="5" Grid.Column="0" Clicked="Trig_Clicked"/>
+            <Button Text="cos" Grid.Row="5" Grid.Column="1" Clicked="Trig_Clicked"/>
+            <Button Text="tan" Grid.Row="5" Grid.Column="2" Clicked="Trig_Clicked"/>
+            <Button Text="ln" Grid.Row="5" Grid.Column="3" Clicked="Log_Clicked"/>
+
+        </Grid>
+    </VerticalStackLayout>
+
+
+</ContentPage>
